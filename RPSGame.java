@@ -1,24 +1,24 @@
-import java.util.Scanner; 
+         import java.util.Scanner; 
 import java.util.Random;
 public class RPSGame{
-    public String GetUserInput(){
+    public int GetUserInput(){
         System.out.println("Press 1 to choose rock; Press 2 to choose paper; Press 3 to choose scissor");
         Scanner scan = new Scanner(System.in);
-        String userchoice = scan.next();
+        int userchoice = scan.nextInt();
         return userchoice;
     }
-    public String ComputerChoice(){
+    public int ComputerChoice(){
        Random rand = new Random();
        int compchoice = rand.nextInt(3)+1;
-       return String.valueOf(compchoice);
+       return compchoice;
     }
-    public String DigitToChoice(String choice){
+    public String DigitToChoice(int choice){
 	String result = " ";
-       if (choice == "1") {
+       if (choice == 1) {
            result = "Rock";
-        }else if (choice =="2") {
+        }else if (choice ==2) {
             result =  "Paper";
-        }else if (choice =="3") {
+        }else if (choice ==3) {
             result =  "Scissor";
         }
 	return result;
