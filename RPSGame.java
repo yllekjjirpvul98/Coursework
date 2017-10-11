@@ -3,6 +3,7 @@ import java.util.Random;
 public class RPSGame{
     int win = 0;
     int turn = 0;
+    int lose = 0;
     public int GetUserInput(){
         System.out.println("Press 1 to choose rock; Press 2 to choose paper; Press 3 to choose scissor");
         Scanner scan = new Scanner(System.in);
@@ -35,13 +36,14 @@ public class RPSGame{
 	    win += 1;
         }else{
             System.out.println("You lose one turn!");
+	    lose +=1;
         }
     }   
     public void checkWin() {
 	if (turn == 2 && win ==2 || turn == 3 && win==2) {
 		System.out.println("Congratulations! You win the game!");
 		System.exit(0);
-	}else if(turn == 3 && win == 0 || turn == 3 && win == 1) {
+	}else if(turn == 2&& lose==2 || turn==3 && lose==2) {
 		System.out.println("Oops! You lose the game :(");
 		System.exit(0);
 	}
