@@ -9,7 +9,7 @@ name = "pypi"
 
 flask = "*"
 multiprocessing = "*"
-
+numpy = "*"
 
 [dev-packages]
 
