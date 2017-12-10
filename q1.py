@@ -20,7 +20,10 @@ if (k%2 == 0):
     num = k/2
 else:
     num = (k-1)/2
-largestNum = heapq.nlargest(num, x)
-for num in largestNum:
-    maxProfit += num
+if (num > 0):
+    largestNum = heapq.nlargest(num, x)
+    for num in largestNum:
+        maxProfit += num
+else:
+    maxProfit = 0
 return maxProfit
