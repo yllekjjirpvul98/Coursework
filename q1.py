@@ -24,7 +24,9 @@ def findbestprofit(pricesarray, k):
         totalMax = 0
         totalMax += maxProfit
         while (num != 0):
-            np.delete(np_maxArray, [maxProfit])
+            np_itemToDelete = np.empty()
+            np_itemToDelete.append(maxProfit)
+            np.delete(np_maxArray, np_itemToDelete)
             maxProfit = np.amax(np_maxArray)
             totalMax += maxProfit
             num = num - 1
