@@ -8,7 +8,7 @@ import random
 def findbestprofit(pricesarray, k):
     np_maxArray = np.empty()
     np_priceArray = np.array(pricesarray)
-    size = np_priceArray.shape[1]
+    size = np_priceArray.shape[0]
     for i in xrange(size):
         for ii in xrange(size):
             if (i != ii):
