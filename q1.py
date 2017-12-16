@@ -1,8 +1,6 @@
 # ONLY EDIT FUNCTIONS MARKED CLEARLY FOR EDITING
 
 import numpy as np
-import heapq
-import random
 
 # Space for question 1
 def findbestprofit(pricesarray, k):
