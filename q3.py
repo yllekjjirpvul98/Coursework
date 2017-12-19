@@ -36,8 +36,11 @@ def findSafeNetwork(numServers, loggingDeviceLimits, connectionDetails):
             connected = connected - 1
     return connected
 <<<<<<< HEAD
+<<<<<<< HEAD
     
     
     
+=======
+>>>>>>> 966fa96629267a21a44dc161b0180a224059b62a
 =======
 >>>>>>> 966fa96629267a21a44dc161b0180a224059b62a
