@@ -6,7 +6,6 @@ name = "pypi"
 
 
 [packages]
-<new python package>= "*"
 
 flask = "*"
 multiprocessing = "*"
