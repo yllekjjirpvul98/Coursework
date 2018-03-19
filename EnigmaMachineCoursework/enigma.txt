@@ -1,0 +1,79 @@
+﻿Parts I have attempted:
+Part 1 - Modeling the plugboard: built a plug and plugboard class so that they can later used by the enigma machine
+Part 2 - Modeling the rotors: built an abstract rotor class
+Part 3 - Modeling the reflector： built a reflector class
+Part 4 - Modeling the Basic Rotors: implement a BasicRotor class
+Part 5 - Modeling the Enigma Machine: implement the Enigma Machine and give two outputs(BADGER, SNAKE) for two tests
+Part 6 - Writing and reading the file: Message to be decoded is stored in read.txt and is read by a bufferedreader;
+The outputting encoded letters will be written into write.txt by using print writer 
+To test this class, I put the message of test 3 into read.txt and after running the class, the output message
+THEQUICKBROWNFOXJUMPEDOVERTHELAZYDOG is written inside write.txt
+
+Part 7 -  Modeling Turning Over Rotor: the test is being put in the Enigma Machine which gives the output of 
+THEQUICKBROWNFOXJUMPEDOVERTHELAZYDOG
+
+Part 8 - Building a Bombe
+
+Challenge1:
+Add Plugs [D-T] [S-A]
+The message will be:
+DAISYDAISYGIVEMEYOURANSWERDO
+
+Challenge2:
+SetPosition (0, 3);
+SetPosition (1, 9);
+SetPosition (2, 15);
+Output:
+WELLALWAYSBETOGETHERHOWEVERFARITSEEMSWELLALWAYSBETOGETHERTOGETHERINELECTRICDREAMS
+
+Challenge3:
+slot 0 = BasicRotor typeV
+slot 1 = BasicRotor typeIII
+slot 2 = BasicRotor typeII
+Output:
+ILOVECOFFEEILOVETEAILOVETHEJAVAJIVEANDITLOVESME
+
+Extension:
+I have attempted two extensions
+
+1. Menu system that allow user to input the plugs, rotors and reflectors
+Select 1 to add plugs, at the end of the session, the program will ask whether user want to add more plugs, if so, 
+the user can continue to add plugs until there are no more plugs to add. After that, the user will return the menu
+interface again.
+Select 2 to add rotors, the user will be able to specify the type of rotor of each slot and their initial position,
+after adding all three rotors, the user will return back to the menu interface.
+Select 3 to add reflector, the user can type in the type of the reflector and return to menu after adding
+Select 4 to add the message to decode, return back to menu after adding
+Select 5 to exit the menu interface and start running the enigma machine - which will return the encoded message to the screen
+Note that this program assumes that all rotors are basic rotors
+
+Test harness:
+I am making use of the data of test 1 for testing.
+Run the program.
+First, press 1 and input A, M, Y, G, L, Y, E, T, N (serially) which will then add plugs [A-M] [G-L] and [E-T]
+Then, press 2 and input I, 6, II, 12, III, 5 serially which will add all three rotors to the enigma machine
+Then, press 3 and input I which will add a Reflector of type I
+Then, press 4 and input the message GFWIQH
+Then, press 5 to start running the enigma machine
+The output message on the console is BADGER 
+
+2. Class that convert the input file into appropriate text for decoding/encoding i.e. removing white spaces/capitalising 
+the letter/and removing any characters that can't be encoded including punctutation
+
+I created a ConvertFile Class which extends from EnigmaFile so that I can use the readfile and writefile methods,
+The message to be decrypted is stored in read_extension.txt and the write file is the same one as what is used in 
+the EnigmaFile class. I add methods to remove unwanted features (i.e. symbols or white spaces) and a method to turn every
+letter into upper case. The class can read in files and convert them into encodable file.
+
+Test harness:
+
+Inside the read_extension.txt,
+the input is:
+OJV//A!YFGU43434OF*I///VOTAYRN
+IwjYQWMXUejGXYGI&&FT
+
+The method RemovePunctuation and ChangeToCapital convert the text to:
+OJVAYFGUOFIVOTAYRNIWJYQWMXUEJGXYGIFT
+
+Output Message is:
+THEQUICKBROWNFOXJUMPEDOVERTHELAZYDOG
