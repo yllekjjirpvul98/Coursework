@@ -1,0 +1,337 @@
+Part 1: Ingredients, Suppliers and Sushi Dishes
+
+List of classes implemented (written as package.class)
+common.Dish
+common.Ingredient
+common.Order
+common.Postcode
+common.User
+common.Supplier
+common.Model
+common.User
+
+List of methods implemented (written as package.class.method):
+common.Dish.getDish
+common.Dish.getPrice
+common.Dish.getDescription
+common.Dish.getIngredients
+common.Dish.getName
+common.Dish.getThreshold
+common.Dish.getRestocking
+common.Dish.editIngredient
+common.Dish.removeIngredient
+common.Dish.setPrice
+common.Dish.setThreshold
+common.Dish.setRestocking
+common.Dish.setDescription
+common.Dish.setIngredients
+common.Ingredient.getIngredientList
+common.Ingredient.getName
+common.Ingredient.getUnit
+common.Ingredient.getRestocking
+common.Ingredient.getThreshold
+common.Ingredient.getSupplier
+common.Ingredient.setThreshold
+common.Ingredient.setRestocking
+common.Ingredient.setSupplier
+common.Ingredient.setUnit
+common.Order.getOrderList
+common.Order.getStatus
+common.Order.setStatus
+common.Order.getUser
+common.Order.getBasket
+common.Order.calculateCost
+common.Order.getName
+common.Order.getComplete
+common.Postcode.getDistance
+common.Postcode.getAvailablePostcode
+common.Postocde.getName
+common.Supplier.getSupplierList
+common.Supplier.getDistance
+common.Supplier.getName
+common.Supplier.setDistance
+common.Supplier.setName
+common.User.getOrders
+common.User.getPostcode
+common.User.getUserList
+common.User.resetOrderList
+common.User.removeOrder
+common.User.makeOrder
+common.User.clearBasket
+common.User.addToBasket
+common.User.updateBasket
+common.User.getBasket
+common.User.getPassword
+common.User.getName
+
+1 paragraph description of what you did:
+I added different classes and attributes that is mentioned in the specification to help modelling the sushi system, 
+and created different getters and setters methods in order to modify and access them later in the coursework.
+-----------------
+
+Part 2: Stock Management 
+
+List of classes implemented (written as package.class)
+common.stockManager
+
+List of methods implemented (written as package.class.method):
+common.stockManager.getManager
+common.stockManager.getIngredientStock
+common.stockManager.getDishStock
+common.stockManager.addStock(Dish)
+common.stockManager.addStock(Ingredient)
+common.stockManager.getAvailableDish
+common.stockManager.getQuantity(Dish)
+common.stockManager.getQuantity(Ingredient)
+common.stockManager.checkRestock(Ingredient)
+common.stockManager.checkRestock(Dish)
+
+1 paragraph description of what you did:
+I implemented the stockManager class which is responsible for managing the
+stock level of the Dishes and Ingredients by monitoring the level and 
+adding new stock when needed
+-----------------
+
+Part 3: Kitchen Staff 
+
+List of classes implemented (written as package.class)
+common.Staff
+
+List of methods implemented (written as package.class.method):
+common.Staff.getStaffList
+common.Staff.getName
+common.Staff.checkSufficientIngredient
+common.Staff.checkStock
+common.Staff.prepareNewDish
+common.Staff.getStatus
+common.Staff.pause
+common.Staff.resume
+common.Staff.getStatus
+common.Staff.run
+
+1 paragraph description of what you did:
+I created a thread called Staff which is responsible for checking whether
+there is sufficient ingredient to create the dishes and checking whether
+any dish need to be restocked by invoking the stock manager. If both 
+conditions are true then prepare new dish.
+-----------------
+
+Part 4: Communication Layer 
+
+List of classes implemented (written as package.class)
+common.Comms
+common.RequestHandler
+common.SocketClient
+common.SocketServer
+common.Message
+
+List of methods implemented (written as package.class.method):
+common.Message.printMessage
+common.Comms.getCommunicationLayer
+common.Comms.runServer
+common.Comms.runClient
+common.Comms.clientSendMessage
+common.Comms.serverSendMessage
+common.Comms.receiveMessage
+common.RequestHandler.checkDish
+common.RequestHandler.checkUser
+common.RequestHandler.compareBasket
+common.RequestHandler.run
+common.SocketClient.sendMessage
+common.SocketClient.getObject
+common.SocketClient.checkMailbox
+common.SocketClient.receiveMessage
+common.SocketClient.run
+common.SocketServer.receiveMessage
+common.SocketServer.sendMessage
+common.SocketServer.run
+
+1 paragraph description of what you did:
+I created a Socket Server to listen the client request and SocketClient
+to send out the request. Then in the socket server I ran a thread called
+RequestHandler to handle request according to its type and give response
+accordingly. Then client and server can communicate with each other
+through invoking methods in the communication layer (Comms class)
+-----------------
+
+Part 5: Client 
+
+List of classes implemented (written as package.class)
+client.Client
+client.ClientInterface
+client.ClientWindow
+default package.ClientApplication
+
+List of methods implemented (written as package.class.method):
+client.Client.register
+client.Client.login
+client.Client.getPostcodes
+client.Client.getDishes
+client.Client.getDishDesciption
+client.Client.getDishPrice
+client.Client.getBasket
+client.Client.getBasketCost
+client.Client.addDishToBasket
+client.Client.updateDishInBasket
+client.Client.checkoutBakset
+client.Client.clearBasket
+client.Client.getOrders
+client.Client.isOrderComplete
+client.Client.getOrderStatus
+client.Client.getOrderCost
+client.Client.cancelOrder
+client.Client.addUpdateListener
+client.Client.notifyUpdate
+ClientApplication.initialise
+ClientApplication.launchGUI
+ClientApplication.main
+
+1 paragraph description of what you did:
+I created a Client class implementing the ClientInterface and run it in 
+the ClientApplication class which will launch the ClientWindow.
+-----------------
+
+Part 6: Drones 
+
+List of classes implemented (written as package.class)
+common.Drone
+
+List of methods implemented (written as package.class.method):
+common.Drone.getDroneList
+common.Drone.getSpeed
+common.Drone.checkStock
+common.Drone.restock
+common.Drone.checkSufficientDishStock
+common.Drone.delivery
+common.Drone.run
+common.Drone.pause
+common.Drone.resume
+common.Drone.getStatus
+common.Drone.getName
+
+1 paragraph description of what you did:
+I created a runnable interface called Drone which is responsible for 
+monitoring the stock level of the ingredient and restock it if it is 
+below the threshold value. The drone is also responsible for delivering
+order if there is sufficient dish stock to complete the order
+-----------------
+
+Part 7: Configuration 
+
+List of classes implemented (written as package.class)
+server.Configuration
+
+List of methods implemented (written as package.class.method):
+server.Configuration.toDish
+server.Configuration.toSupplier
+server.Configuration.toIngredient
+server.Configuration.toPostcode
+server.Configuration.parse
+
+1 paragraph description of what you did:
+Parse the configuration file according to the first part of each line which
+indicate the type of the object. Then create an instance of the object
+according to the information in the file.
+-----------------
+
+Part 8: Server 
+
+List of classes implemented (written as package.class)
+server.Server
+server.ServerInterface
+server.ServerWindow
+default package.ServerApplication
+
+List of methods implemented (written as package.class.method):
+server.Server.getServer
+server.Server.setServer
+server.Server.loadConfiguration
+server.Server.setRestockingIngredientsEnabled
+server.Server.setRestockingDishesEnabled
+server.Server.setStock(Ingredient)
+server.Server.getDishes
+server.Server.setStock(Dish)
+server.Server.getDishes
+server.Server.addDish
+server.Server.removeDish
+server.Server.addIngredientToDish
+server.Server.removeIngredientFromDish
+server.Server.setRecipe
+server.Server.setRestockLevels
+server.Server.getRestockThreshold
+server.Server.getRestockAmount
+server.Server.getRecipe
+server.Server.getDishStockLevels
+server.Server.getIngredients
+server.Server.addIngredient
+server.Server.removeIngredient
+server.Server.setRestockLevels
+server.Server.getRestockThreshold
+server.Server.getRestockAmount
+server.Server.getIngredientStock
+server.Server.getSuppliers
+server.Server.addSupplier
+server.Server.removeSupplier
+server.Server.getSupplierDistance
+server.Server.getDrones
+server.Server.addDrone
+server.Server.removeDrone
+server.Server.getDroneSpeed
+server.Server.getDroneStatus
+server.Server.addStaff
+server.Server.removeStaff
+server.Server.getStaffStatus
+server.Server.getOrders
+server.Server.removeOrder
+server.Server.getOrderDistance
+server.Server.isOrderComplete
+server.Server.getOrderStatus
+server.Server.getOrderCost
+server.Server.getPostcodes
+server.Server.addPostcode
+server.Server.removePostcode
+server.Server.getUsers
+server.Server.removeUser
+server.Server.addUpdateListener
+server.Server.notifyUpdate
+ServerApplication.initialise
+ServerApplication.launchGUI
+ServerApplication.main
+
+1 paragraph description of what you did:
+I created a Server class implementing the ServerInterface and run it in 
+the ServerApplication class which will launch the ServerWindow.
+-----------------
+
+Part 9: Persistence 
+
+List of classes implemented (written as package.class)
+common.DataPersistance
+common.ShutdownHook
+
+List of methods implemented (written as package.class.method):
+common.DataPersistance.reset
+common.DataPersistance.getDataPersistance
+common.DataPersistance.save
+common.DataPersistance.read
+common.ShutdownHook.run
+
+1 paragraph description of what you did:
+The ShutdownHook will save the current data before terminating the JVM to
+the data.txt file. When the server starts running again, it will read the
+data from the data.txt file and load the persistent data using configuration. 
+-----------------
+
+Assumptions made:
+Server is always hosted before opening the client application
+No order should exist the amount of restock amount + threshold amount
+Speed of drone is in unit of m/s
+Distance of supplier is in km
+
+
+Any other comments:
+My data persistance is not implemented correctly and it is not working as intended. 
+Whenever the server window is closed and opened again, there may be errornous data
+fetched from the data.txt (storage for persistant data). To prevent these errornous data is 
+affecting the testing of the server, please commen out the data.read() method in the server
+constructor. Thank you!
